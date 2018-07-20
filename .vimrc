@@ -13,6 +13,9 @@ Plugin 'morhetz/gruvbox'
 " ==== File tree
 Plugin 'scrooloose/nerdtree'
 
+" ==== Multiple Cursors like Sublime
+Plugin 'terryma/vim-multiple-cursors'
+
 
 call vundle#end()
 
@@ -29,6 +32,10 @@ set expandtab       " tabs are spaces
 " Blink cursor on error instead of beeping (grr)
 set visualbell
 set noerrorbells         " don't beep
+
+" Fix backspace to act as expected...: https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode
+set backspace=indent,eol,start
+
 
 " ==== UI Config
 
@@ -57,6 +64,9 @@ let g:NERDTreeDirArrows=0
 map <C-t> :NERDTreeToggle<CR>
 
 
+" ==== Multiple Cursors
+set selection=inclusive
+
 " ==== moving around
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
@@ -64,9 +74,7 @@ nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
 
-
 " ==== Searching
-
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
@@ -82,4 +90,3 @@ set foldmethod=indent   " fold based on indent level
 
 "call pathogen#infect()                      " use pathogen
 "call pathogen#runtime_append_all_bundles()  " use pathogen
-
