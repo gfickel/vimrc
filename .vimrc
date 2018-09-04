@@ -16,11 +16,17 @@ Plugin 'scrooloose/nerdtree'
 " ==== Multiple Cursors like Sublime
 Plugin 'terryma/vim-multiple-cursors'
 
+" ==== Autocomplete. Check here how to install: https://github.com/Valloric/YouCompleteMe/blob/master/README.md#installation
+Plugin 'valloric/youcompleteme'
+
+" ==== Multiple Cursors like Sublime
+Plugin 'ctrlpvim/ctrlp.vim'
+
 
 call vundle#end()
 
 colorscheme gruvbox    " awesome colorschemei
-set guifont=Monospace\ 10
+set guifont=Monospace\ 9.5
 set background=dark
 syntax enable           " enable syntax processing
 
@@ -66,6 +72,13 @@ map <C-t> :NERDTreeToggle<CR>
 
 " ==== Multiple Cursors
 set selection=inclusive
+
+" ==== Ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra' " set the directory as 'a' current file, 'r' dir containing .git
+let g:ycm_autoclose_preview_window_after_completion=1
+
 
 " ==== moving around
 nmap <silent> <A-Up> :wincmd k<CR>
