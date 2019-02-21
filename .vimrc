@@ -30,6 +30,9 @@ set guifont=Monospace\ 9.5
 set background=dark
 syntax enable           " enable syntax processing
 
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
 set tabstop=4       " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in tab when editing
 set shiftwidth=4
