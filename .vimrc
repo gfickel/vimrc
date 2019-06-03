@@ -1,3 +1,4 @@
+
 " === .vimrc References
 " https://dougblack.io/words/a-good-vimrc.html
 
@@ -22,8 +23,14 @@ Plugin 'valloric/youcompleteme'
 " ==== Multiple Cursors like Sublime
 Plugin 'ctrlpvim/ctrlp.vim'
 
+" ==== GDB integration
+Plugin 'vim-scripts/Conque-GDB'
+
 
 call vundle#end()
+
+
+let g:ycm_server_keep_logfiles = 1
 
 colorscheme gruvbox    " awesome colorschemei
 set guifont=Monospace\ 9.5
@@ -44,6 +51,17 @@ set noerrorbells         " don't beep
 
 " Fix backspace to act as expected...: https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode
 set backspace=indent,eol,start
+
+
+" Conque-GDB
+let g:ConqueTerm_Color = 2         " 1: strip color after 200 lines, 2: always with color
+let g:ConqueTerm_CloseOnEnd = 1    " close conque when program ends running
+let g:ConqueTerm_StartMessages = 0 " display warning messages if conqueTerm is configured incorrectly  
+let g:ConqueGdb_Run = '<F2>'
+let g:ConqueGdb_Continue = '<F3>'
+let g:ConqueGdb_Print = '<F4>'
+let g:ConqueGdb_Next = '<F5>'
+let g:ConqueGdb_Step = '<F6>'
 
 
 " ==== UI Config
@@ -93,7 +111,8 @@ nmap <silent> <A-Right> :wincmd l<CR>
 " ==== Searching
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
-
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
 
 " ==== Folding
 set foldenable          " enable folding
