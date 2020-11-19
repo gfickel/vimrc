@@ -17,20 +17,19 @@ Plugin 'scrooloose/nerdtree'
 " ==== Multiple Cursors like Sublime
 Plugin 'terryma/vim-multiple-cursors'
 
-" ==== Autocomplete. Check here how to install: https://github.com/Valloric/YouCompleteMe/blob/master/README.md#installation
-Plugin 'valloric/youcompleteme'
-
 " ==== Multiple Cursors like Sublime
 Plugin 'ctrlpvim/ctrlp.vim'
 
-" ==== GDB integration
-Plugin 'vim-scripts/Conque-GDB'
+Plugin 'neoclide/coc.nvim'
 
+Plugin 'puremourning/vimspector'
 
 call vundle#end()
 
+" let g:vimspector_enable_mappings = 'HUMAN'
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+packadd! vimspector
 
-let g:ycm_server_keep_logfiles = 1
 
 colorscheme gruvbox    " awesome colorschemei
 set guifont=Monospace\ 9.5
@@ -51,17 +50,6 @@ set noerrorbells         " don't beep
 
 " Fix backspace to act as expected...: https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode
 set backspace=indent,eol,start
-
-
-" Conque-GDB
-let g:ConqueTerm_Color = 2         " 1: strip color after 200 lines, 2: always with color
-let g:ConqueTerm_CloseOnEnd = 1    " close conque when program ends running
-let g:ConqueTerm_StartMessages = 0 " display warning messages if conqueTerm is configured incorrectly  
-let g:ConqueGdb_Run = '<F2>'
-let g:ConqueGdb_Continue = '<F3>'
-let g:ConqueGdb_Print = '<F4>'
-let g:ConqueGdb_Next = '<F5>'
-let g:ConqueGdb_Step = '<F6>'
 
 
 " ==== UI Config
@@ -98,7 +86,6 @@ set selection=inclusive
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra' " set the directory as 'a' current file, 'r' dir containing .git
-let g:ycm_autoclose_preview_window_after_completion=1
 
 
 " ==== moving around
